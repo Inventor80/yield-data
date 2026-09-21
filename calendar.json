@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "updatedOn": "2026-09-17",
+  "events": [
+    {
+      "id": "mpc-307-2026-09",
+      "kind": "mpc",
+      "title": "CBN rate decision — 307th MPC meeting",
+      "summary": "The CBN sets the benchmark interest rate. This decision flows into every savings rate, bond rate and T-bill yield in the country within weeks.",
+      "startDate": "2026-09-21",
+      "endDate": "2026-09-22",
+      "source": "Central Bank of Nigeria (CBN)",
+      "sourceUrl": "https://www.cbn.gov.ng/MonetaryPolicy/calendar.html",
+      "actionable": false,
+      "confidence": "confirmed",
+      "checkedOn": "2026-09-17"
+    },
+    {
+      "id": "mpc-308-2026-11",
+      "kind": "mpc",
+      "title": "CBN rate decision — 308th MPC meeting",
+      "summary": "The last rate decision of 2026. Whatever is set here governs what your money earns going into the new year.",
+      "startDate": "2026-11-23",
+      "endDate": "2026-11-24",
+      "source": "Central Bank of Nigeria (CBN)",
+      "sourceUrl": "https://www.cbn.gov.ng/MonetaryPolicy/calendar.html",
+      "actionable": false,
+      "confidence": "confirmed",
+      "checkedOn": "2026-09-17"
+    },
+    {
+      "id": "fgnsb-2026-09",
+      "kind": "savings_bond",
+      "title": "FGN Savings Bond — September offer",
+      "summary": "The federal government borrows directly from ordinary Nigerians. You lend them money for 2 or 3 years and they pay you interest every quarter.",
+      "startDate": "2026-09-07",
+      "endDate": "2026-09-11",
+      "rate": "2-year: 14.12% · 3-year: 15.12%",
+      "minimum": "₦5,000",
+      "maximum": "₦50,000,000",
+      "tenor": "2 years (due 16 Sep 2028) or 3 years (due 16 Sep 2029)",
+      "howTo": [
+        "Contact a stockbroking firm appointed as a DMO distribution agent",
+        "You will need your BVN and a bank account in your own name",
+        "Subscribe in multiples of ₦1,000 above the ₦5,000 minimum",
+        "Interest lands quarterly — 16 Dec, 16 Mar, 16 Jun, 16 Sep"
+      ],
+      "source": "Debt Management Office (DMO)",
+      "sourceUrl": "https://www.dmo.gov.ng/fgn-bonds/savings-bond",
+      "actionable": true,
+      "confidence": "confirmed",
+      "checkedOn": "2026-09-17"
+    },
+    {
+      "id": "fgnsb-2026-10",
+      "kind": "savings_bond",
+      "title": "FGN Savings Bond — October offer",
+      "summary": "The next monthly window. The DMO publishes the circular in the first week of the month, and the rate is only known then.",
+      "startDate": "2026-10-05",
+      "endDate": "2026-10-09",
+      "rate": "Announced in the October circular",
+      "minimum": "₦5,000",
+      "maximum": "₦50,000,000",
+      "tenor": "2 or 3 years",
+      "howTo": [
+        "Watch for the October circular on dmo.gov.ng in the first week",
+        "Line up your broker or bank investment desk before it opens",
+        "The window runs Monday to Friday — five working days, no extensions"
+      ],
+      "source": "Debt Management Office (DMO)",
+      "sourceUrl": "https://www.dmo.gov.ng/fgn-bonds/savings-bond",
+      "actionable": true,
+      "confidence": "expected",
+      "checkedOn": "2026-09-17",
+      "expectedNote": "Dates follow the DMO monthly pattern. The October circular had not been published when this was checked — confirm before acting."
+    },
+    {
+      "id": "cpi-2026-09",
+      "kind": "inflation",
+      "title": "NBS inflation figures — September data",
+      "summary": "The official measure of how fast prices are rising. This is the number your investments have to beat just to keep your money from shrinking.",
+      "startDate": "2026-10-15",
+      "endDate": "2026-10-15",
+      "source": "National Bureau of Statistics (NBS)",
+      "sourceUrl": "https://nigerianstat.gov.ng/elibrary/search/cpi",
+      "actionable": false,
+      "confidence": "expected",
+      "checkedOn": "2026-09-17",
+      "expectedNote": "The NBS releases each month CPI on the 15th of the following month, or the next working day."
+    },
+    {
+      "id": "cpi-2026-10",
+      "kind": "inflation",
+      "title": "NBS inflation figures — October data",
+      "summary": "The next inflation print. Landing just before the November MPC meeting, it is the figure the committee will be reacting to.",
+      "startDate": "2026-11-16",
+      "endDate": "2026-11-16",
+      "source": "National Bureau of Statistics (NBS)",
+      "sourceUrl": "https://nigerianstat.gov.ng/elibrary/search/cpi",
+      "actionable": false,
+      "confidence": "expected",
+      "checkedOn": "2026-09-17",
+      "expectedNote": "The 15th falls on a Sunday, so the release moves to Monday 16 November."
+    },
+    {
+      "id": "tbill-2026-09-30",
+      "kind": "tbill",
+      "title": "Treasury Bill auction",
+      "summary": "Short-term government borrowing. You pay less than the face value now and receive the full amount at maturity — the gap is your return.",
+      "startDate": "2026-09-30",
+      "endDate": "2026-09-30",
+      "rate": "Set at auction",
+      "minimum": "₦50m at primary auction · smaller parcels via banks and brokers",
+      "tenor": "91, 182 or 364 days",
+      "howTo": [
+        "The primary auction needs ₦50m — most retail investors go through a bank",
+        "Banks and brokers sell smaller parcels on the secondary market",
+        "Ask your bank treasury desk for their current offer rate",
+        "Your return is fixed at purchase — you know the exact amount upfront"
+      ],
+      "source": "Central Bank of Nigeria (CBN)",
+      "sourceUrl": "https://www.cbn.gov.ng",
+      "actionable": true,
+      "confidence": "expected",
+      "checkedOn": "2026-09-17",
+      "expectedNote": "The CBN does not publish a forward auction calendar. NTB auctions run roughly every two weeks on a Wednesday — treat this date as indicative and confirm with your bank."
+    }
+  ]
+}
