@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedOn": "2026-09-17",
+  "updatedOn": "2026-09-28",
   "events": [
     {
       "id": "mpc-307-2026-09",
@@ -124,6 +124,29 @@
       "confidence": "expected",
       "checkedOn": "2026-09-17",
       "expectedNote": "The CBN does not publish a forward auction calendar. NTB auctions run roughly every two weeks on a Wednesday — treat this date as indicative and confirm with your bank."
+    },
+    {
+      "id": "ipo-dangote-refinery-2026",
+      "kind": "ipo",
+      "title": "Dangote Refinery share offer (IPO)",
+      "summary": "The refinery is selling shares to the public for the first time — the first refinery ever offered on the Nigerian Exchange. Buying shares makes you part-owner of the business, so what you get back depends on how it performs. Unlike a bond, nothing is guaranteed.",
+      "startDate": "2026-09-14",
+      "endDate": "2026-10-13",
+      "rate": "₦525 per share",
+      "minimum": "10 shares — ₦5,250",
+      "tenor": "No end date — you hold the shares until you sell them",
+      "howTo": [
+        "You need a CSCS account, which your broker or investment app opens for you",
+        "Subscribe through NGX Invest, a licensed stockbroker, or an SEC-registered investment app",
+        "Check any platform on the SEC register at sec.gov.ng before you send money",
+        "Decide your amount before you start: shares can fall as well as rise, and this is not a fixed return",
+        "Applications close on 13 October — allotment and listing follow afterwards"
+      ],
+      "source": "Nigerian Exchange Group (NGX)",
+      "sourceUrl": "https://ngxgroup.com/dangote-sounds-ngx-gong-as-refinery-ipo-opens/",
+      "actionable": true,
+      "confidence": "confirmed",
+      "checkedOn": "2026-09-28"
     }
   ]
 }
