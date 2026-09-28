@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "updatedOn": "2026-09-28",
+  "figures": {
+    "inflation": {
+      "label": "Inflation",
+      "value": 15.39,
+      "asOf": "2026-08",
+      "source": "National Bureau of Statistics",
+      "sourceUrl": "https://nigerianstat.gov.ng",
+      "note": "Headline CPI, all items, year on year. Food was 19.57% on the same release."
+    },
+    "mpr": {
+      "label": "CBN policy rate",
+      "value": 26.5,
+      "asOf": "2026-08",
+      "source": "Central Bank of Nigeria",
+      "sourceUrl": "https://www.cbn.gov.ng/rates/mnymktind.html",
+      "note": "The rate the CBN sets. Every other rate here moves with it."
+    },
+    "savings": {
+      "label": "Bank savings account",
+      "value": 7.46,
+      "asOf": "2026-08",
+      "source": "Central Bank of Nigeria",
+      "sourceUrl": "https://www.cbn.gov.ng/rates/mnymktind.html",
+      "note": "The average across Nigerian banks. Yours may differ — check your statement."
+    },
+    "deposit12m": {
+      "label": "12-month fixed deposit",
+      "value": 10.3,
+      "asOf": "2026-08",
+      "source": "Central Bank of Nigeria",
+      "sourceUrl": "https://www.cbn.gov.ng/rates/mnymktind.html"
+    },
+    "tbill": {
+      "label": "Treasury Bill",
+      "value": 16.3,
+      "asOf": "2026-08",
+      "source": "Central Bank of Nigeria",
+      "sourceUrl": "https://www.cbn.gov.ng/rates/mnymktind.html",
+      "note": "CBN's money market indicator. Individual auctions can stop at a different rate, and 364-day bills have recently cleared higher."
+    },
+    "savingsBond": {
+      "label": "FGN Savings Bond",
+      "value": 15.12,
+      "asOf": "2026-09",
+      "source": "Debt Management Office",
+      "sourceUrl": "https://www.dmo.gov.ng/fgn-bonds/savings-bond",
+      "note": "The 3-year tranche of the September offer. The 2-year paid 14.12%. A new rate is set every month."
+    }
+  }
+}
