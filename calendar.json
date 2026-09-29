@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedOn": "2026-09-28",
+  "updatedOn": "2026-09-29",
   "events": [
     {
       "id": "mpc-307-2026-09",
@@ -103,29 +103,6 @@
       "expectedNote": "The 15th falls on a Sunday, so the release moves to Monday 16 November."
     },
     {
-      "id": "tbill-2026-09-30",
-      "kind": "tbill",
-      "title": "Treasury Bill auction",
-      "summary": "Short-term government borrowing. You pay less than the face value now and receive the full amount at maturity — the gap is your return.",
-      "startDate": "2026-09-30",
-      "endDate": "2026-09-30",
-      "rate": "Set at auction",
-      "minimum": "₦50m at primary auction · smaller parcels via banks and brokers",
-      "tenor": "91, 182 or 364 days",
-      "howTo": [
-        "The primary auction needs ₦50m — most retail investors go through a bank",
-        "Banks and brokers sell smaller parcels on the secondary market",
-        "Ask your bank treasury desk for their current offer rate",
-        "Your return is fixed at purchase — you know the exact amount upfront"
-      ],
-      "source": "Central Bank of Nigeria (CBN)",
-      "sourceUrl": "https://www.cbn.gov.ng",
-      "actionable": true,
-      "confidence": "expected",
-      "checkedOn": "2026-09-17",
-      "expectedNote": "The CBN does not publish a forward auction calendar. NTB auctions run roughly every two weeks on a Wednesday — treat this date as indicative and confirm with your bank."
-    },
-    {
       "id": "ipo-dangote-refinery-2026",
       "kind": "ipo",
       "title": "Dangote Refinery share offer (IPO)",
@@ -147,6 +124,226 @@
       "actionable": true,
       "confidence": "confirmed",
       "checkedOn": "2026-09-28"
+    },
+    {
+      "id": "fgnsb-2026-11",
+      "kind": "savings_bond",
+      "title": "FGN Savings Bond — November offer",
+      "summary": "The government borrows from ordinary savers for two or three years and pays you a fixed rate every quarter. September paid 15.12% on the 3-year: on ₦100,000 that is ₦3,780 landing in your account every three months, then your ₦100,000 back at the end.",
+      "startDate": "2026-11-02",
+      "endDate": "2026-11-06",
+      "rate": "Set in the November circular",
+      "minimum": "₦5,000",
+      "maximum": "₦50,000,000",
+      "tenor": "2 or 3 years",
+      "howTo": [
+        "Watch dmo.gov.ng for the November circular in the first week",
+        "Contact a DMO-appointed stockbroker or your bank’s investment desk before it opens",
+        "You need a bank account in your own name, your BVN and a valid ID",
+        "The window runs Monday to Friday — five working days, no extensions"
+      ],
+      "source": "Debt Management Office (DMO)",
+      "sourceUrl": "https://www.dmo.gov.ng/fgn-bonds/savings-bond",
+      "actionable": true,
+      "confidence": "expected",
+      "checkedOn": "2026-09-29",
+      "expectedNote": "The DMO opens this window in the first full week of each month. The circular for this month had not been published when this was checked — confirm the dates and the rate before acting."
+    },
+    {
+      "id": "fgnsb-2026-12",
+      "kind": "savings_bond",
+      "title": "FGN Savings Bond — December offer",
+      "summary": "The government borrows from ordinary savers for two or three years and pays you a fixed rate every quarter. September paid 15.12% on the 3-year: on ₦100,000 that is ₦3,780 landing in your account every three months, then your ₦100,000 back at the end.",
+      "startDate": "2026-12-07",
+      "endDate": "2026-12-11",
+      "rate": "Set in the December circular",
+      "minimum": "₦5,000",
+      "maximum": "₦50,000,000",
+      "tenor": "2 or 3 years",
+      "howTo": [
+        "Watch dmo.gov.ng for the December circular in the first week",
+        "Contact a DMO-appointed stockbroker or your bank’s investment desk before it opens",
+        "You need a bank account in your own name, your BVN and a valid ID",
+        "The window runs Monday to Friday — five working days, no extensions"
+      ],
+      "source": "Debt Management Office (DMO)",
+      "sourceUrl": "https://www.dmo.gov.ng/fgn-bonds/savings-bond",
+      "actionable": true,
+      "confidence": "expected",
+      "checkedOn": "2026-09-29",
+      "expectedNote": "The DMO opens this window in the first full week of each month. The circular for this month had not been published when this was checked — confirm the dates and the rate before acting."
+    },
+    {
+      "id": "fgnbond-2026-10",
+      "kind": "fgn_bond",
+      "title": "FGN Bond auction — October",
+      "summary": "The government’s main monthly borrowing, in bonds lasting ten years or more. The minimum at the auction itself is ₦50 million, so this is not where most people buy — but the rate set here is the anchor every other rate follows, and you can buy the same bonds in small amounts afterwards through a broker.",
+      "startDate": "2026-10-12",
+      "endDate": "2026-10-12",
+      "rate": "Set at auction — September’s new 10-year cleared at 16.79%",
+      "minimum": "₦50,000,000 at the auction · from about ₦10,000 through a broker afterwards",
+      "tenor": "10 years and longer",
+      "howTo": [
+        "Most people do not bid here. Watch the rate instead: it tells you where all other rates are heading",
+        "To own these bonds in a smaller amount, ask a stockbroker about buying on the secondary market",
+        "The DMO publishes the offer circular about a week before the auction"
+      ],
+      "source": "Debt Management Office (DMO)",
+      "sourceUrl": "https://www.dmo.gov.ng/fgn-bonds",
+      "actionable": false,
+      "confidence": "expected",
+      "checkedOn": "2026-09-29",
+      "expectedNote": "The DMO holds one FGN Bond auction a month; September’s was on Monday the 14th, settling on the 16th. The Q4 2026 issuance calendar had not been published when this was checked."
+    },
+    {
+      "id": "fgnbond-2026-11",
+      "kind": "fgn_bond",
+      "title": "FGN Bond auction — November",
+      "summary": "The government’s main monthly borrowing, in bonds lasting ten years or more. The minimum at the auction itself is ₦50 million, so this is not where most people buy — but the rate set here is the anchor every other rate follows, and you can buy the same bonds in small amounts afterwards through a broker.",
+      "startDate": "2026-11-16",
+      "endDate": "2026-11-16",
+      "rate": "Set at auction — September’s new 10-year cleared at 16.79%",
+      "minimum": "₦50,000,000 at the auction · from about ₦10,000 through a broker afterwards",
+      "tenor": "10 years and longer",
+      "howTo": [
+        "Most people do not bid here. Watch the rate instead: it tells you where all other rates are heading",
+        "To own these bonds in a smaller amount, ask a stockbroker about buying on the secondary market",
+        "The DMO publishes the offer circular about a week before the auction"
+      ],
+      "source": "Debt Management Office (DMO)",
+      "sourceUrl": "https://www.dmo.gov.ng/fgn-bonds",
+      "actionable": false,
+      "confidence": "expected",
+      "checkedOn": "2026-09-29",
+      "expectedNote": "The DMO holds one FGN Bond auction a month; September’s was on Monday the 14th, settling on the 16th. The Q4 2026 issuance calendar had not been published when this was checked."
+    },
+    {
+      "id": "fgnbond-2026-12",
+      "kind": "fgn_bond",
+      "title": "FGN Bond auction — December",
+      "summary": "The government’s main monthly borrowing, in bonds lasting ten years or more. The minimum at the auction itself is ₦50 million, so this is not where most people buy — but the rate set here is the anchor every other rate follows, and you can buy the same bonds in small amounts afterwards through a broker.",
+      "startDate": "2026-12-14",
+      "endDate": "2026-12-14",
+      "rate": "Set at auction — September’s new 10-year cleared at 16.79%",
+      "minimum": "₦50,000,000 at the auction · from about ₦10,000 through a broker afterwards",
+      "tenor": "10 years and longer",
+      "howTo": [
+        "Most people do not bid here. Watch the rate instead: it tells you where all other rates are heading",
+        "To own these bonds in a smaller amount, ask a stockbroker about buying on the secondary market",
+        "The DMO publishes the offer circular about a week before the auction"
+      ],
+      "source": "Debt Management Office (DMO)",
+      "sourceUrl": "https://www.dmo.gov.ng/fgn-bonds",
+      "actionable": false,
+      "confidence": "expected",
+      "checkedOn": "2026-09-29",
+      "expectedNote": "The DMO holds one FGN Bond auction a month; September’s was on Monday the 14th, settling on the 16th. The Q4 2026 issuance calendar had not been published when this was checked."
+    },
+    {
+      "id": "tbill-2026-10-07",
+      "kind": "tbill",
+      "title": "Treasury Bill auction — 7 October",
+      "summary": "Short-term government borrowing, in 91, 182 and 364-day bills. You are not paid interest: you buy the bill for less than it repays. A 364-day bill clearing at 15.89%, September’s rate, means paying about ₦86,300 today for ₦100,000 in a year — the ₦13,700 gap is your return, and it is tax-free.",
+      "startDate": "2026-10-07",
+      "endDate": "2026-10-07",
+      "rate": "Set at auction — the 364-day bill cleared at 15.89% on 23 September",
+      "minimum": "₦50,000,000 at the auction · from about ₦100,000 through a bank or broker",
+      "tenor": "91, 182 or 364 days",
+      "howTo": [
+        "The auction itself is for large institutions. To buy a smaller parcel, ask your bank’s treasury desk or a stockbroker",
+        "Ask what rate they are offering and compare it with the auction rate — the gap is their margin",
+        "Your money is returned in full at maturity, and the return is not taxed"
+      ],
+      "source": "Central Bank of Nigeria (CBN)",
+      "sourceUrl": "https://www.cbn.gov.ng",
+      "actionable": true,
+      "confidence": "expected",
+      "checkedOn": "2026-09-29",
+      "expectedNote": "The CBN auctions Treasury Bills on Wednesdays, roughly twice a month. The last auction of Q3 was 23 September and the Q4 programme had not been published when this was checked, so this date is an estimate from the usual pattern. Confirm on cbn.gov.ng."
+    },
+    {
+      "id": "tbill-2026-10-21",
+      "kind": "tbill",
+      "title": "Treasury Bill auction — 21 October",
+      "summary": "Short-term government borrowing, in 91, 182 and 364-day bills. You are not paid interest: you buy the bill for less than it repays. A 364-day bill clearing at 15.89%, September’s rate, means paying about ₦86,300 today for ₦100,000 in a year — the ₦13,700 gap is your return, and it is tax-free.",
+      "startDate": "2026-10-21",
+      "endDate": "2026-10-21",
+      "rate": "Set at auction — the 364-day bill cleared at 15.89% on 23 September",
+      "minimum": "₦50,000,000 at the auction · from about ₦100,000 through a bank or broker",
+      "tenor": "91, 182 or 364 days",
+      "howTo": [
+        "The auction itself is for large institutions. To buy a smaller parcel, ask your bank’s treasury desk or a stockbroker",
+        "Ask what rate they are offering and compare it with the auction rate — the gap is their margin",
+        "Your money is returned in full at maturity, and the return is not taxed"
+      ],
+      "source": "Central Bank of Nigeria (CBN)",
+      "sourceUrl": "https://www.cbn.gov.ng",
+      "actionable": true,
+      "confidence": "expected",
+      "checkedOn": "2026-09-29",
+      "expectedNote": "The CBN auctions Treasury Bills on Wednesdays, roughly twice a month. The last auction of Q3 was 23 September and the Q4 programme had not been published when this was checked, so this date is an estimate from the usual pattern. Confirm on cbn.gov.ng."
+    },
+    {
+      "id": "tbill-2026-11-04",
+      "kind": "tbill",
+      "title": "Treasury Bill auction — 4 November",
+      "summary": "Short-term government borrowing, in 91, 182 and 364-day bills. You are not paid interest: you buy the bill for less than it repays. A 364-day bill clearing at 15.89%, September’s rate, means paying about ₦86,300 today for ₦100,000 in a year — the ₦13,700 gap is your return, and it is tax-free.",
+      "startDate": "2026-11-04",
+      "endDate": "2026-11-04",
+      "rate": "Set at auction — the 364-day bill cleared at 15.89% on 23 September",
+      "minimum": "₦50,000,000 at the auction · from about ₦100,000 through a bank or broker",
+      "tenor": "91, 182 or 364 days",
+      "howTo": [
+        "The auction itself is for large institutions. To buy a smaller parcel, ask your bank’s treasury desk or a stockbroker",
+        "Ask what rate they are offering and compare it with the auction rate — the gap is their margin",
+        "Your money is returned in full at maturity, and the return is not taxed"
+      ],
+      "source": "Central Bank of Nigeria (CBN)",
+      "sourceUrl": "https://www.cbn.gov.ng",
+      "actionable": true,
+      "confidence": "expected",
+      "checkedOn": "2026-09-29",
+      "expectedNote": "The CBN auctions Treasury Bills on Wednesdays, roughly twice a month. The last auction of Q3 was 23 September and the Q4 programme had not been published when this was checked, so this date is an estimate from the usual pattern. Confirm on cbn.gov.ng."
+    },
+    {
+      "id": "tbill-2026-11-18",
+      "kind": "tbill",
+      "title": "Treasury Bill auction — 18 November",
+      "summary": "Short-term government borrowing, in 91, 182 and 364-day bills. You are not paid interest: you buy the bill for less than it repays. A 364-day bill clearing at 15.89%, September’s rate, means paying about ₦86,300 today for ₦100,000 in a year — the ₦13,700 gap is your return, and it is tax-free.",
+      "startDate": "2026-11-18",
+      "endDate": "2026-11-18",
+      "rate": "Set at auction — the 364-day bill cleared at 15.89% on 23 September",
+      "minimum": "₦50,000,000 at the auction · from about ₦100,000 through a bank or broker",
+      "tenor": "91, 182 or 364 days",
+      "howTo": [
+        "The auction itself is for large institutions. To buy a smaller parcel, ask your bank’s treasury desk or a stockbroker",
+        "Ask what rate they are offering and compare it with the auction rate — the gap is their margin",
+        "Your money is returned in full at maturity, and the return is not taxed"
+      ],
+      "source": "Central Bank of Nigeria (CBN)",
+      "sourceUrl": "https://www.cbn.gov.ng",
+      "actionable": true,
+      "confidence": "expected",
+      "checkedOn": "2026-09-29",
+      "expectedNote": "The CBN auctions Treasury Bills on Wednesdays, roughly twice a month. The last auction of Q3 was 23 September and the Q4 programme had not been published when this was checked, so this date is an estimate from the usual pattern. Confirm on cbn.gov.ng."
+    },
+    {
+      "id": "cpi-2026-11",
+      "kind": "inflation",
+      "title": "NBS inflation figures — November data",
+      "summary": "The official measure of how fast prices are rising. This is the number every investment has to beat just to keep your money where it is. August came in at 15.39%, the third monthly fall in a row.",
+      "startDate": "2026-12-15",
+      "endDate": "2026-12-15",
+      "howTo": [
+        "The report is published on nigerianstat.gov.ng, usually mid-morning",
+        "Compare the headline figure with the rate you are earning — the gap is what you are really making"
+      ],
+      "source": "National Bureau of Statistics (NBS)",
+      "sourceUrl": "https://nigerianstat.gov.ng",
+      "actionable": false,
+      "confidence": "expected",
+      "checkedOn": "2026-09-29",
+      "expectedNote": "NBS publishes the CPI report in the middle of the following month. The exact date for this release had not been announced when this was checked."
     }
   ]
 }
