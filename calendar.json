@@ -243,7 +243,7 @@
       "id": "tbill-2026-10-07",
       "kind": "tbill",
       "title": "Treasury Bill auction — 7 October",
-      "summary": "Short-term government borrowing, in 91, 182 and 364-day bills. You are not paid interest: you buy the bill for less than it repays. A 364-day bill clearing at 15.89%, September’s rate, means paying about ₦86,300 today for ₦100,000 in a year — the ₦13,700 gap is your return, and it is tax-free.",
+      "summary": "Short-term government borrowing, in 91, 182 and 364-day bills. You are not paid interest: you buy the bill for less than it repays. A 364-day bill clearing at 15.89%, September’s rate, means paying about ₦86,300 today for ₦100,000 in a year — the ₦13,700 gap is your return, less 10% withholding tax.",
       "startDate": "2026-10-07",
       "endDate": "2026-10-07",
       "rate": "Set at auction — the 364-day bill cleared at 15.89% on 23 September",
@@ -252,7 +252,8 @@
       "howTo": [
         "The auction itself is for large institutions. To buy a smaller parcel, ask your bank’s treasury desk or a stockbroker",
         "Ask what rate they are offering and compare it with the auction rate — the gap is their margin",
-        "Your money is returned in full at maturity, and the return is not taxed"
+        "Since October 2025, 10% withholding tax is deducted from the return on Treasury Bills. FGN bonds are still exempt",
+        "Your money itself is returned in full at maturity"
       ],
       "source": "Central Bank of Nigeria (CBN)",
       "sourceUrl": "https://www.cbn.gov.ng",
@@ -265,7 +266,7 @@
       "id": "tbill-2026-10-21",
       "kind": "tbill",
       "title": "Treasury Bill auction — 21 October",
-      "summary": "Short-term government borrowing, in 91, 182 and 364-day bills. You are not paid interest: you buy the bill for less than it repays. A 364-day bill clearing at 15.89%, September’s rate, means paying about ₦86,300 today for ₦100,000 in a year — the ₦13,700 gap is your return, and it is tax-free.",
+      "summary": "Short-term government borrowing, in 91, 182 and 364-day bills. You are not paid interest: you buy the bill for less than it repays. A 364-day bill clearing at 15.89%, September’s rate, means paying about ₦86,300 today for ₦100,000 in a year — the ₦13,700 gap is your return, less 10% withholding tax.",
       "startDate": "2026-10-21",
       "endDate": "2026-10-21",
       "rate": "Set at auction — the 364-day bill cleared at 15.89% on 23 September",
@@ -274,7 +275,8 @@
       "howTo": [
         "The auction itself is for large institutions. To buy a smaller parcel, ask your bank’s treasury desk or a stockbroker",
         "Ask what rate they are offering and compare it with the auction rate — the gap is their margin",
-        "Your money is returned in full at maturity, and the return is not taxed"
+        "Since October 2025, 10% withholding tax is deducted from the return on Treasury Bills. FGN bonds are still exempt",
+        "Your money itself is returned in full at maturity"
       ],
       "source": "Central Bank of Nigeria (CBN)",
       "sourceUrl": "https://www.cbn.gov.ng",
@@ -287,7 +289,7 @@
       "id": "tbill-2026-11-04",
       "kind": "tbill",
       "title": "Treasury Bill auction — 4 November",
-      "summary": "Short-term government borrowing, in 91, 182 and 364-day bills. You are not paid interest: you buy the bill for less than it repays. A 364-day bill clearing at 15.89%, September’s rate, means paying about ₦86,300 today for ₦100,000 in a year — the ₦13,700 gap is your return, and it is tax-free.",
+      "summary": "Short-term government borrowing, in 91, 182 and 364-day bills. You are not paid interest: you buy the bill for less than it repays. A 364-day bill clearing at 15.89%, September’s rate, means paying about ₦86,300 today for ₦100,000 in a year — the ₦13,700 gap is your return, less 10% withholding tax.",
       "startDate": "2026-11-04",
       "endDate": "2026-11-04",
       "rate": "Set at auction — the 364-day bill cleared at 15.89% on 23 September",
@@ -296,7 +298,8 @@
       "howTo": [
         "The auction itself is for large institutions. To buy a smaller parcel, ask your bank’s treasury desk or a stockbroker",
         "Ask what rate they are offering and compare it with the auction rate — the gap is their margin",
-        "Your money is returned in full at maturity, and the return is not taxed"
+        "Since October 2025, 10% withholding tax is deducted from the return on Treasury Bills. FGN bonds are still exempt",
+        "Your money itself is returned in full at maturity"
       ],
       "source": "Central Bank of Nigeria (CBN)",
       "sourceUrl": "https://www.cbn.gov.ng",
@@ -309,7 +312,7 @@
       "id": "tbill-2026-11-18",
       "kind": "tbill",
       "title": "Treasury Bill auction — 18 November",
-      "summary": "Short-term government borrowing, in 91, 182 and 364-day bills. You are not paid interest: you buy the bill for less than it repays. A 364-day bill clearing at 15.89%, September’s rate, means paying about ₦86,300 today for ₦100,000 in a year — the ₦13,700 gap is your return, and it is tax-free.",
+      "summary": "Short-term government borrowing, in 91, 182 and 364-day bills. You are not paid interest: you buy the bill for less than it repays. A 364-day bill clearing at 15.89%, September’s rate, means paying about ₦86,300 today for ₦100,000 in a year — the ₦13,700 gap is your return, less 10% withholding tax.",
       "startDate": "2026-11-18",
       "endDate": "2026-11-18",
       "rate": "Set at auction — the 364-day bill cleared at 15.89% on 23 September",
@@ -318,7 +321,8 @@
       "howTo": [
         "The auction itself is for large institutions. To buy a smaller parcel, ask your bank’s treasury desk or a stockbroker",
         "Ask what rate they are offering and compare it with the auction rate — the gap is their margin",
-        "Your money is returned in full at maturity, and the return is not taxed"
+        "Since October 2025, 10% withholding tax is deducted from the return on Treasury Bills. FGN bonds are still exempt",
+        "Your money itself is returned in full at maturity"
       ],
       "source": "Central Bank of Nigeria (CBN)",
       "sourceUrl": "https://www.cbn.gov.ng",
