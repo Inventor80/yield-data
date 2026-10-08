@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedOn": "2026-09-29",
+  "updatedOn": "2026-10-08",
   "events": [
     {
       "id": "mpc-307-2026-09",
@@ -55,24 +55,25 @@
       "id": "fgnsb-2026-10",
       "kind": "savings_bond",
       "title": "FGN Savings Bond — October offer",
-      "summary": "The next monthly window. The DMO publishes the circular in the first week of the month, and the rate is only known then.",
+      "summary": "Open now, and it closes tomorrow. The 3-year pays 14.071% and the 2-year 13.071% — on ₦100,000 at the 3-year rate that is ₦3,518 into your account every three months for three years, then your ₦100,000 back. Rates are down from 15.12% in September.",
       "startDate": "2026-10-05",
       "endDate": "2026-10-09",
-      "rate": "Announced in the October circular",
+      "rate": "14.071% (3-year) · 13.071% (2-year)",
       "minimum": "₦5,000",
       "maximum": "₦50,000,000",
-      "tenor": "2 or 3 years",
+      "tenor": "2 years to 14 Oct 2028, or 3 years to 14 Oct 2029",
       "howTo": [
-        "Watch for the October circular on dmo.gov.ng in the first week",
-        "Line up your broker or bank investment desk before it opens",
-        "The window runs Monday to Friday — five working days, no extensions"
+        "Subscriptions close on Friday 9 October — settlement follows on 14 October",
+        "Contact a DMO-appointed stockbroker, your bank’s investment desk, or an investment app today",
+        "You need a bank account in your own name, your BVN and a valid ID",
+        "Units are ₦1,000 each: minimum ₦5,000, then in multiples of ₦1,000",
+        "Interest is paid every 14 January, April, July and October"
       ],
       "source": "Debt Management Office (DMO)",
       "sourceUrl": "https://www.dmo.gov.ng/fgn-bonds/savings-bond",
       "actionable": true,
-      "confidence": "expected",
-      "checkedOn": "2026-09-17",
-      "expectedNote": "Dates follow the DMO monthly pattern. The October circular had not been published when this was checked — confirm before acting."
+      "confidence": "confirmed",
+      "checkedOn": "2026-10-08"
     },
     {
       "id": "cpi-2026-09",
@@ -113,17 +114,18 @@
       "minimum": "10 shares — ₦5,250",
       "tenor": "No end date — you hold the shares until you sell them",
       "howTo": [
+        "Applications close on Tuesday 13 October — this is the last week",
         "You need a CSCS account, which your broker or investment app opens for you",
         "Subscribe through NGX Invest, a licensed stockbroker, or an SEC-registered investment app",
         "Check any platform on the SEC register at sec.gov.ng before you send money",
-        "Decide your amount before you start: shares can fall as well as rise, and this is not a fixed return",
-        "Applications close on 13 October — allotment and listing follow afterwards"
+        "If the offer is oversubscribed you receive fewer shares than you applied for, and the rest is refunded",
+        "Allotment and the listing date follow the timetable in the prospectus, and are announced after the close"
       ],
       "source": "Nigerian Exchange Group (NGX)",
       "sourceUrl": "https://ngxgroup.com/dangote-sounds-ngx-gong-as-refinery-ipo-opens/",
       "actionable": true,
       "confidence": "confirmed",
-      "checkedOn": "2026-09-28"
+      "checkedOn": "2026-10-08"
     },
     {
       "id": "fgnsb-2026-11",
@@ -243,10 +245,10 @@
       "id": "tbill-2026-10-07",
       "kind": "tbill",
       "title": "Treasury Bill auction — 7 October",
-      "summary": "Short-term government borrowing, in 91, 182 and 364-day bills. You are not paid interest: you buy the bill for less than it repays. A 364-day bill clearing at 15.89%, September’s rate, means paying about ₦86,300 today for ₦100,000 in a year — the ₦13,700 gap is your return, less 10% withholding tax.",
+      "summary": "The first auction of the fourth quarter: ₦900bn offered across 91, 182 and 364-day bills, settling on 8 October. You are not paid interest on a bill — you buy it for less than it repays, and the gap is your return, less 10% withholding tax.",
       "startDate": "2026-10-07",
       "endDate": "2026-10-07",
-      "rate": "Set at auction — the 364-day bill cleared at 15.89% on 23 September",
+      "rate": "Set at auction — the 364-day bill last cleared at 15.89% on 23 September",
       "minimum": "₦50,000,000 at the auction · from about ₦100,000 through a bank or broker",
       "tenor": "91, 182 or 364 days",
       "howTo": [
@@ -258,9 +260,8 @@
       "source": "Central Bank of Nigeria (CBN)",
       "sourceUrl": "https://www.cbn.gov.ng",
       "actionable": true,
-      "confidence": "expected",
-      "checkedOn": "2026-09-29",
-      "expectedNote": "The CBN auctions Treasury Bills on Wednesdays, roughly twice a month. The last auction of Q3 was 23 September and the Q4 programme had not been published when this was checked, so this date is an estimate from the usual pattern. Confirm on cbn.gov.ng."
+      "confidence": "confirmed",
+      "checkedOn": "2026-10-08"
     },
     {
       "id": "tbill-2026-10-21",
@@ -282,8 +283,8 @@
       "sourceUrl": "https://www.cbn.gov.ng",
       "actionable": true,
       "confidence": "expected",
-      "checkedOn": "2026-09-29",
-      "expectedNote": "The CBN auctions Treasury Bills on Wednesdays, roughly twice a month. The last auction of Q3 was 23 September and the Q4 programme had not been published when this was checked, so this date is an estimate from the usual pattern. Confirm on cbn.gov.ng."
+      "checkedOn": "2026-10-08",
+      "expectedNote": "The CBN auctions Treasury Bills on Wednesdays, roughly twice a month. Its Q4 2026 issuance calendar had still not been published when this was checked — the first Q4 auction ran on 7 October — so this date is an estimate. Confirm on cbn.gov.ng."
     },
     {
       "id": "tbill-2026-11-04",
@@ -305,8 +306,8 @@
       "sourceUrl": "https://www.cbn.gov.ng",
       "actionable": true,
       "confidence": "expected",
-      "checkedOn": "2026-09-29",
-      "expectedNote": "The CBN auctions Treasury Bills on Wednesdays, roughly twice a month. The last auction of Q3 was 23 September and the Q4 programme had not been published when this was checked, so this date is an estimate from the usual pattern. Confirm on cbn.gov.ng."
+      "checkedOn": "2026-10-08",
+      "expectedNote": "The CBN auctions Treasury Bills on Wednesdays, roughly twice a month. Its Q4 2026 issuance calendar had still not been published when this was checked — the first Q4 auction ran on 7 October — so this date is an estimate. Confirm on cbn.gov.ng."
     },
     {
       "id": "tbill-2026-11-18",
@@ -328,8 +329,8 @@
       "sourceUrl": "https://www.cbn.gov.ng",
       "actionable": true,
       "confidence": "expected",
-      "checkedOn": "2026-09-29",
-      "expectedNote": "The CBN auctions Treasury Bills on Wednesdays, roughly twice a month. The last auction of Q3 was 23 September and the Q4 programme had not been published when this was checked, so this date is an estimate from the usual pattern. Confirm on cbn.gov.ng."
+      "checkedOn": "2026-10-08",
+      "expectedNote": "The CBN auctions Treasury Bills on Wednesdays, roughly twice a month. Its Q4 2026 issuance calendar had still not been published when this was checked — the first Q4 auction ran on 7 October — so this date is an estimate. Confirm on cbn.gov.ng."
     },
     {
       "id": "cpi-2026-11",

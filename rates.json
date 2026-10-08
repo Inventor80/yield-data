@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedOn": "2026-09-28",
+  "updatedOn": "2026-10-08",
   "figures": {
     "inflation": {
       "label": "Inflation",
@@ -43,11 +43,11 @@
     },
     "savingsBond": {
       "label": "FGN Savings Bond",
-      "value": 15.12,
-      "asOf": "2026-09",
+      "value": 14.071,
+      "asOf": "2026-10",
       "source": "Debt Management Office",
       "sourceUrl": "https://www.dmo.gov.ng/fgn-bonds/savings-bond",
-      "note": "The 3-year tranche of the September offer. The 2-year paid 14.12%. A new rate is set every month."
+      "note": "The 3-year tranche of the October offer, down from 15.12% in September. The 2-year paid 13.071%. A new rate is set every month."
     }
   }
 }
