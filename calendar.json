@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedOn": "2026-10-08",
+  "updatedOn": "2026-10-09",
   "events": [
     {
       "id": "mpc-307-2026-09",
@@ -55,7 +55,7 @@
       "id": "fgnsb-2026-10",
       "kind": "savings_bond",
       "title": "FGN Savings Bond — October offer",
-      "summary": "Open now, and it closes tomorrow. The 3-year pays 14.071% and the 2-year 13.071% — on ₦100,000 at the 3-year rate that is ₦3,518 into your account every three months for three years, then your ₦100,000 back. Rates are down from 15.12% in September.",
+      "summary": "The monthly retail window. The 3-year pays 14.071% and the 2-year 13.071% — on ₦100,000 at the 3-year rate that is ₦3,518 into your account every three months for three years, then your ₦100,000 back. Rates are down from 15.12% in September.",
       "startDate": "2026-10-05",
       "endDate": "2026-10-09",
       "rate": "14.071% (3-year) · 13.071% (2-year)",
