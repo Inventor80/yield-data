@@ -1,29 +1,363 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Yield</title>
-  <style>
-    :root { --bg: #f1efe8; --ink: #1a1a1a; --ink-2: #444; --brand: #0d4f2e; }
-    @media (prefers-color-scheme: dark) { :root { --bg: #0f1411; --ink: #eef1ef; --ink-2: #c3cbc6; --brand: #7cc79f; } }
-    body { margin: 0; background: var(--bg); color: var(--ink-2); font: 16px/1.6 -apple-system, "Segoe UI", Roboto, sans-serif; }
-    main { max-width: 640px; margin: 0 auto; padding: 48px 16px; }
-    h1 { color: var(--ink); margin: 0 0 8px; }
-    a { color: var(--brand); }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yield — Nigerian bond and Treasury Bill dates, with reminders</title>
+<meta name="description" content="Every FGN Savings Bond, Treasury Bill, FGN Bond, Sukuk and share offer in one calendar, with a reminder before each window closes and plain-English lessons in naira.">
+<meta property="og:title" content="Yield — never miss a government bond window again">
+<meta property="og:description" content="Nigerian bond and Treasury Bill dates, reminders, and plain-English lessons in naira. Free, no account.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.yieldng.com/">
+<link rel="icon" href="data:,">
+<style>
+  :root {
+    --deep: #0d4f2e;
+    --deeper: #09381f;
+    --cream: #f1efe8;
+    --ink: #14271c;
+    --ink-2: #4a5751;
+    --line: #e6e2d8;
+    --surface: #ffffff;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink-2);
+    font: 16px/1.6 "Segoe UI", system-ui, -apple-system, "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--deep); }
+  a:hover { color: var(--deeper); }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---- The drifting shapes -------------------------------------
+     Three slow cycles that are deliberately not multiples of each
+     other — 17, 19 and 23 seconds — so they never fall into step.
+     The moment they sync, the eye stops seeing depth and starts
+     seeing a mechanism. */
+  @keyframes drift1 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(28px,-34px) scale(1.06); } }
+  @keyframes drift2 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-36px,26px) scale(1.09); } }
+  @keyframes drift3 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(22px,30px); } }
+  .shape {
+    position: absolute; border-radius: 50%; filter: blur(46px);
+    will-change: transform; pointer-events: none;
+  }
+  .s1 { width: 460px; height: 460px; background: #1b7a4a; opacity: .55; top: -120px; left: -80px; animation: drift1 19s ease-in-out infinite; }
+  .s2 { width: 380px; height: 380px; background: #0a6b57; opacity: .5;  top: 240px; right: -60px; animation: drift2 23s ease-in-out infinite; }
+  .s3 { width: 300px; height: 300px; background: #14543a; opacity: .6;  bottom: -90px; left: 42%;  animation: drift3 17s ease-in-out infinite; }
+
+  /* ---- The levitating card, same 6px / 4.5s as the app --------- */
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+  @keyframes floatShadow {
+    0%,100% { box-shadow: 0 10px 28px rgba(0,0,0,.20); }
+    50%     { box-shadow: 0 26px 56px rgba(0,0,0,.30); }
+  }
+  .float { animation: float 4.5s ease-in-out infinite, floatShadow 4.5s ease-in-out infinite; will-change: transform; }
+
+  /* Someone whose device asks for less motion gets none of it. */
+  @media (prefers-reduced-motion: reduce) {
+    .shape, .float { animation: none; }
+    .float { box-shadow: 0 16px 36px rgba(0,0,0,.22); }
+  }
+
+  /* ---- Hero ----------------------------------------------------- */
+  .hero { background: var(--deep); position: relative; overflow: hidden; }
+  .nav { position: relative; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; padding: 26px 0; }
+  .brand { font-size: 19px; font-weight: 700; color: #fff; letter-spacing: -.2px; }
+  .nav-links { margin-left: auto; display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+  .nav-links a { color: #c3e3d1; text-decoration: none; font-size: 15px; }
+  .nav-links a:hover { color: #fff; }
+  .btn {
+    display: inline-block; font-weight: 600; text-decoration: none;
+    padding: 14px 24px; border-radius: 12px; font-size: 15.5px;
+  }
+  .btn-light { background: #fff; color: var(--deep); }
+  .btn-light:hover { background: #eef6f1; color: var(--deep); }
+  .btn-ghost { color: #fff; border: 1px solid rgba(255,255,255,.32); }
+  .btn-ghost:hover { color: #fff; border-color: rgba(255,255,255,.6); }
+  .nav-links .btn-light { padding: 10px 17px; font-size: 14.5px; }
+
+  .hero-grid {
+    position: relative; display: flex; flex-wrap: wrap; gap: 56px;
+    align-items: center; padding: 44px 0 92px;
+  }
+  .hero-copy { flex: 999 1 460px; min-width: 0; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,.12); padding: 7px 14px;
+    border-radius: 999px; margin-bottom: 22px;
+    font-size: 13px; color: #d7eee0; font-weight: 500;
+  }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: #6ee7a8; }
+  h1 {
+    margin: 0; font-size: 54px; line-height: 1.07; color: #fff;
+    font-weight: 700; letter-spacing: -1.2px;
+  }
+  .lede { margin: 22px 0 0; font-size: 17.5px; line-height: 1.6; color: #bcdcc9; max-width: 540px; }
+  .cta { display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
+  .fineprint { margin-top: 28px; font-size: 13.5px; color: #9ac4ab; }
+
+  /* ---- The live card -------------------------------------------- */
+  .card {
+    flex: 1 1 330px; min-width: 0; max-width: 390px;
+    background: var(--surface); border-radius: 20px; padding: 22px;
+  }
+  .tag { font-size: 10px; font-weight: 700; letter-spacing: .7px; padding: 4px 9px; border-radius: 6px; }
+  .tag-bond  { color: #166534; background: #dcfce7; }
+  .tag-bill  { color: #92400e; background: #fef3c7; }
+  .tag-share { color: #3730a3; background: #e0e7ff; }
+  .tag-econ  { color: #1e40af; background: #dbeafe; }
+  .card-head { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+  .when { margin-left: auto; font-size: 11.5px; font-weight: 600; }
+  .when-soon { color: #b91c1c; }
+  .when-open { color: #b45309; }
+  .when-later { color: #6b6b6b; }
+  .card-title { font-size: 18px; font-weight: 600; color: #1a1a1a; }
+  .card-body { font-size: 14px; color: #555; margin-top: 8px; line-height: 1.5; }
+  .facts { display: flex; gap: 26px; margin-top: 18px; padding-top: 16px; border-top: 1px solid #eeebe3; flex-wrap: wrap; }
+  .fact-k { font-size: 10px; color: #8a8a8a; letter-spacing: .4px; }
+  .fact-v { font-size: 15px; font-weight: 600; color: #1a1a1a; }
+  .card-src { font-size: 11px; color: #8a8a8a; margin-top: 14px; }
+
+  /* ---- Sections -------------------------------------------------- */
+  section { padding: 76px 0; }
+  .eyebrow { font-size: 12px; letter-spacing: 1.3px; color: #7a8a80; font-weight: 700; }
+  h2 { margin: 10px 0 0; font-size: 32px; line-height: 1.2; color: var(--ink); font-weight: 700; letter-spacing: -.6px; }
+  .cols { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 36px; }
+  .col { flex: 1 1 280px; min-width: 0; }
+  .col h3 { margin: 0; font-size: 19px; color: var(--ink); font-weight: 600; }
+  .col p { margin: 10px 0 0; font-size: 15px; line-height: 1.62; }
+
+  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 28px; }
+  .list { margin: 16px 0 0; padding: 0; list-style: none; }
+  .list li { padding: 11px 0; border-top: 1px solid var(--line); font-size: 15px; display: flex; gap: 14px; }
+  .list li:first-child { border-top: 0; }
+  .list b { color: var(--ink); font-weight: 600; min-width: 96px; }
+
+  footer { background: var(--deep); color: #a9cdb8; padding: 44px 0; font-size: 14px; }
+  footer a { color: #d7eee0; text-decoration: none; }
+  footer a:hover { color: #fff; text-decoration: underline; }
+  .foot-links { display: flex; gap: 22px; flex-wrap: wrap; margin-bottom: 18px; }
+  .disclaimer { max-width: 760px; line-height: 1.6; color: #8fb9a0; font-size: 13px; }
+
+  @media (max-width: 720px) {
+    h1 { font-size: 38px; letter-spacing: -.8px; }
+    h2 { font-size: 26px; }
+    .hero-grid { padding: 28px 0 64px; gap: 36px; }
+    section { padding: 56px 0; }
+  }
+</style>
 </head>
 <body>
-  <main>
-    <h1>Yield</h1>
-    <p>Nigerian government bond and Treasury Bill dates, with reminders and plain-English lessons.</p>
-    <ul>
-      <li><a href="demo/">Try it in your browser</a> — the app itself, without reminders</li>
-      <li><a href="privacy.html">Privacy Policy</a></li>
-      <li><a href="disclaimer.html">Disclaimer</a></li>
-      <li><a href="support.html">Support</a></li>
-    </ul>
-    <p><small>Calendar edition 2026-10-08.</small></p>
-  </main>
+
+<div class="hero">
+  <div class="shape s1"></div>
+  <div class="shape s2"></div>
+  <div class="shape s3"></div>
+
+  <div class="wrap">
+    <nav class="nav">
+      <div class="brand">Yield</div>
+      <div class="nav-links">
+        <a href="#how">How it works</a>
+        <a href="#learn">Learn</a>
+        <a href="/demo/" class="btn btn-light">Try it in your browser</a>
+      </div>
+    </nav>
+
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="pill"><span class="dot"></span><span id="open-count">Loading the calendar…</span></div>
+        <h1>Never miss a government bond window again</h1>
+        <p class="lede">
+          The federal government borrows from ordinary Nigerians every month, at rates a savings
+          account cannot match. The windows open for about five working days and close without
+          warning. Yield keeps every date in one place and tells you before each one shuts.
+        </p>
+        <div class="cta">
+          <a href="/demo/" class="btn btn-light">Open the calendar</a>
+          <a href="#how" class="btn btn-ghost">See how it works</a>
+        </div>
+        <div class="fineprint">Free. No account. Nothing about you leaves your phone.</div>
+      </div>
+
+      <div class="card float" id="live-card">
+        <div class="card-head">
+          <span class="tag tag-bond">LOADING</span>
+        </div>
+        <div class="card-title">Fetching the next window…</div>
+        <div class="card-body">This card reads the same calendar the app does, so it is never out of date.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="how">
+  <div class="wrap">
+    <div class="eyebrow">WHAT IT DOES</div>
+    <h2>Three things, done properly</h2>
+    <div class="cols">
+      <div class="col">
+        <h3>Every window, one calendar</h3>
+        <p>FGN Savings Bonds, Treasury Bills, FGN Bonds, Sukuk, green bonds and share offers — each with the rate, the minimum, how to take part, and the official source it came from. Dates that have not been published yet are clearly marked “Expected”.</p>
+      </div>
+      <div class="col">
+        <h3>Told before it closes</h3>
+        <p>Set an alert and you are reminded two days before a window opens, on the morning it opens, and — for windows that run several days — two days before it shuts. That last one is the one that rescues most people.</p>
+      </div>
+      <div class="col">
+        <h3>Explained in plain English</h3>
+        <p>Nineteen short lessons, every example in naira. Why your savings are shrinking, how to spot a scheme, what tax actually takes, and what each thing you can buy really pays.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="learn" style="background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="cols" style="margin-top:0; align-items:flex-start">
+      <div class="col" style="flex: 1 1 420px">
+        <div class="eyebrow">THE LESSONS</div>
+        <h2>From “what is inflation” to “how do I actually buy this”</h2>
+        <p style="font-size:15.5px; line-height:1.65; margin-top:16px">
+          Two stages. The first covers why any of this matters and how not to be cheated. The second
+          goes through every instrument you can actually buy in Nigeria — what it is, how it hands
+          you money, what tax comes off, and what happens if you need your money back early.
+        </p>
+        <p style="margin-top:20px"><a href="/demo/" class="btn btn-light" style="background:var(--deep); color:#fff">Start reading</a></p>
+      </div>
+      <div class="col" style="flex: 1 1 380px">
+        <div class="panel">
+          <ul class="list">
+            <li><b>Stage 1</b><span>Inflation, saving vs investing, risk, compounding, spotting a scheme, what you actually keep</span></li>
+            <li><b>Stage 2</b><span>Savings bonds, Treasury Bills, FGN Bonds, shares and IPOs, Sukuk, funds, dollar assets, pensions, corporate debt, REITs, index funds, dividends</span></li>
+            <li><b>Calculators</b><span>Growth, compare, goal, inflation, dividend income, time to target</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">BEFORE YOU ASK</div>
+    <h2>Yield never touches your money</h2>
+    <div class="cols">
+      <div class="col">
+        <h3>It is not a broker</h3>
+        <p>Yield tells you when windows open and explains what they are. You invest through your own bank, a stockbroker, or an SEC-registered app — never through us. We never ask for your bank details or your BVN.</p>
+      </div>
+      <div class="col">
+        <h3>It is not advice</h3>
+        <p>Everything here is education and information. Nobody at Yield knows your income, your debts or your goals, so nothing here is a recommendation. Always confirm dates and rates with the official source before you act.</p>
+      </div>
+      <div class="col">
+        <h3>It is not the government</h3>
+        <p>Yield is independent, and not affiliated with the DMO, the CBN, the NBS or any other government body. We compile the calendar from their published circulars and link to them so you can check.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-links">
+      <a href="/demo/">Open the app</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/support.html">Support</a>
+    </div>
+    <p class="disclaimer">
+      Yield is for education and information only. It is not financial advice, and it is not
+      affiliated with, endorsed by or operated on behalf of the Debt Management Office, the Central
+      Bank of Nigeria, the National Bureau of Statistics or any other government body. Calendar
+      edition 2026-10-08.
+    </p>
+  </div>
+</footer>
+
+<script>
+/* The hero reads the same calendar.json the app fetches, so the page
+   cannot quietly drift out of date between deploys. Everything here
+   degrades to the static copy already in the markup if the fetch
+   fails — an offline visitor still sees a sensible page. */
+(function () {
+  var TAG = { savings_bond: ['tag-bond','SAVINGS BOND'], fgn_bond: ['tag-bond','FGN BOND'],
+              sukuk: ['tag-bond','SUKUK'], dividend: ['tag-bond','DIVIDEND'],
+              tbill: ['tag-bill','TREASURY BILL'], ipo: ['tag-share','SHARE OFFER'],
+              mpc: ['tag-econ','RATE DECISION'], inflation: ['tag-econ','INFLATION DATA'] };
+
+  function parseDate(iso) {
+    var p = String(iso).split('-');
+    return new Date(+p[0], +p[1] - 1, +p[2]);
+  }
+  function days(from, to) {
+    return Math.round((to - from) / 86400000);
+  }
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+
+  fetch('/calendar.json', { cache: 'no-cache' })
+    .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+    .then(function (data) {
+      if (!data || !Array.isArray(data.events)) return;
+
+      var now = new Date();
+      var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+      var live = data.events.filter(function (e) { return parseDate(e.endDate) >= today; })
+        .sort(function (a, b) { return a.startDate < b.startDate ? -1 : 1; });
+
+      var open = live.filter(function (e) {
+        return e.actionable && parseDate(e.startDate) <= today;
+      });
+
+      var label = document.getElementById('open-count');
+      if (label) {
+        label.textContent = open.length === 1 ? '1 window open right now'
+          : open.length > 1 ? open.length + ' windows open right now'
+          : live.length ? 'Next window in ' + days(today, parseDate(live[0].startDate)) + ' days'
+          : 'Calendar updated ' + data.updatedOn;
+      }
+
+      var e = open[0] || live[0];
+      if (!e) return;
+
+      var tag = TAG[e.kind] || ['tag-bond', 'WINDOW'];
+      var start = parseDate(e.startDate), end = parseDate(e.endDate);
+      var when, cls;
+      if (start <= today) {
+        var left = days(today, end);
+        when = left <= 0 ? 'Closes today' : left === 1 ? 'Closes tomorrow' : 'Closes in ' + left + ' days';
+        cls = left <= 1 ? 'when-soon' : 'when-open';
+      } else {
+        var until = days(today, start);
+        when = until === 1 ? 'Opens tomorrow' : 'Opens in ' + until + ' days';
+        cls = 'when-later';
+      }
+
+      var facts = '';
+      if (e.rate) facts += '<div><div class="fact-k">RATE</div><div class="fact-v">' + esc(e.rate) + '</div></div>';
+      if (e.minimum) facts += '<div><div class="fact-k">MINIMUM</div><div class="fact-v">' + esc(e.minimum) + '</div></div>';
+
+      document.getElementById('live-card').innerHTML =
+        '<div class="card-head"><span class="tag ' + tag[0] + '">' + tag[1] + '</span>' +
+        '<span class="when ' + cls + '">' + esc(when) + '</span></div>' +
+        '<div class="card-title">' + esc(e.title) + '</div>' +
+        '<div class="card-body">' + esc(e.summary) + '</div>' +
+        (facts ? '<div class="facts">' + facts + '</div>' : '') +
+        '<div class="card-src">' + esc(e.source) + ' · checked ' + esc(e.checkedOn) + '</div>';
+    })
+    .catch(function () { /* The static card stays. */ });
+})();
+</script>
+
 </body>
 </html>
