@@ -347,13 +347,17 @@
       if (e.rate) facts += '<div><div class="fact-k">RATE</div><div class="fact-v">' + esc(e.rate) + '</div></div>';
       if (e.minimum) facts += '<div><div class="fact-k">MINIMUM</div><div class="fact-v">' + esc(e.minimum) + '</div></div>';
 
-      document.getElementById('live-card').innerHTML =
+      var card = document.getElementById('live-card');
+      card.style.cursor = 'pointer';
+      card.setAttribute('role', 'link');
+      card.onclick = function () { window.location.href = '/w/' + e.id + '.html'; };
+      card.innerHTML =
         '<div class="card-head"><span class="tag ' + tag[0] + '">' + tag[1] + '</span>' +
         '<span class="when ' + cls + '">' + esc(when) + '</span></div>' +
         '<div class="card-title">' + esc(e.title) + '</div>' +
         '<div class="card-body">' + esc(e.summary) + '</div>' +
         (facts ? '<div class="facts">' + facts + '</div>' : '') +
-        '<div class="card-src">' + esc(e.source) + ' · checked ' + esc(e.checkedOn) + '</div>';
+        '<div class="card-src">' + esc(e.source) + ' · checked ' + esc(e.checkedOn) + ' · <span style="color:#0d4f2e;font-weight:600">full details →</span></div>';
     })
     .catch(function () { /* The static card stays. */ });
 })();
