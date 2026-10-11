@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What should I do with my money? | Yield</title>
+<meta name="description" content="Tell us how much you have and when you need it back. Yield shows what it would pay in each Nigerian government option, when the next window opens, and how long it takes to double.">
+<link rel="canonical" href="https://www.yieldng.com/plan.html">
+<meta property="og:title" content="What should I do with my money? | Yield">
+<meta property="og:description" content="Two questions, and a real answer at today's Nigerian rates.">
+<meta property="og:url" content="https://www.yieldng.com/plan.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+  :root { --deep:#0d4f2e; --cream:#f1efe8; --ink:#14271c; --ink2:#4a5751; --line:#e3dfd4; --warn:#b45309; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--deep); color:#fff;
+         font:16px/1.6 "Segoe UI", system-ui, -apple-system, sans-serif; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:620px; margin:0 auto; padding:0 22px; }
+  .num { font-variant-numeric: tabular-nums; }
+  a { color:#d7eee0; }
+
+  .eyebrow { font-size:11px; letter-spacing:1.4px; font-weight:700; color:#9fcfb4; }
+  h1 { margin:10px 0 0; font-size:32px; line-height:1.18; font-weight:700; letter-spacing:-.6px; }
+  .lede { color:#9ac4ab; font-size:15px; margin-top:10px; }
+
+  label.k { display:block; font-size:10.5px; letter-spacing:1.2px; color:#8dbda1; font-weight:700; margin:28px 0 8px; }
+  .amount { display:flex; align-items:baseline; border-bottom:2px solid rgba(255,255,255,.3); padding-bottom:8px; }
+  .amount span { font-size:30px; font-weight:600; }
+  .amount input { flex:1; background:none; border:0; outline:none; color:#fff; font:700 36px/1 inherit;
+                  letter-spacing:-1px; margin-left:6px; font-variant-numeric: tabular-nums; width:100%; }
+  .chips { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
+  .chip { border:1px solid rgba(255,255,255,.28); background:none; color:#d7eee0; border-radius:999px;
+          padding:9px 15px; font:inherit; font-size:13.5px; cursor:pointer; transition:background .15s, color .15s, transform .08s; }
+  .chip:hover { border-color:#fff; }
+  .chip:active { transform: scale(.97); }
+  .chip[aria-pressed="true"] { background:#fff; color:var(--deep); border-color:#fff; font-weight:600; }
+
+  .opt { display:block; width:100%; text-align:left; font:inherit; cursor:pointer; color:#fff;
+         background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18);
+         border-radius:14px; padding:15px 16px; margin-bottom:10px; transition:background .15s, transform .08s; }
+  .opt:hover { background:rgba(255,255,255,.14); }
+  .opt:active { transform: scale(.995); }
+  .opt small { display:block; font-size:12.5px; opacity:.72; margin-top:2px; }
+  .opt[aria-pressed="true"] { background:#fff; color:var(--deep); border-color:#fff; font-weight:600; }
+  .opt[aria-pressed="true"] small { opacity:.66; }
+
+  .go { width:100%; font:inherit; font-size:16px; font-weight:700; cursor:pointer;
+        background:#fff; color:var(--deep); border:0; border-radius:14px; padding:17px; margin-top:22px;
+        transition:transform .08s, opacity .15s; }
+  .go:active { transform: scale(.99); }
+  .go:disabled { opacity:.4; cursor:not-allowed; }
+  .fine { font-size:11.5px; color:#7fb096; text-align:center; margin:12px 0 44px; }
+
+  /* ---- the answer ---- */
+  #answer { display:none; background:var(--cream); color:var(--ink2); }
+  #answer.on { display:block; }
+  .ahead { background:var(--deep); color:#fff; padding:26px 0 24px; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:16px; padding:20px; margin-top:20px; }
+  .big { font-size:34px; font-weight:700; color:var(--ink); letter-spacing:-1.2px; }
+  .k2 { font-size:10.5px; letter-spacing:1.1px; color:#8a9790; font-weight:700; }
+  .row { display:flex; justify-content:space-between; font-size:13px; margin-bottom:5px; }
+  .track { height:8px; background:#ece9e0; border-radius:4px; overflow:hidden; margin-bottom:14px; }
+  .fill { height:100%; border-radius:4px; }
+  .note { background:var(--cream); border-radius:11px; padding:13px 14px; margin-top:6px; font-size:14px; color:var(--ink); }
+  .steps a { display:flex; align-items:center; gap:14px; padding:15px 0; border-top:1px solid var(--line);
+             text-decoration:none; color:var(--ink2); }
+  .steps a:hover { color:var(--deep); }
+  .steps b { display:block; color:var(--ink); font-size:14.5px; }
+  footer { border-top:1px solid var(--line); margin-top:30px; padding:24px 0 48px; font-size:13px; }
+  footer a { color:var(--deep); margin-right:16px; }
+  @media (prefers-reduced-motion: reduce) { * { transition:none !important; } }
+</style>
+</head>
+<body>
+
+<section id="ask">
+  <div class="wrap" style="padding-top:46px">
+    <div class="eyebrow">START HERE</div>
+    <h1>How much do you have, and when do you need it?</h1>
+    <p class="lede">Two answers and we will tell you where it could go, what it would pay, and when you
+      can act. Everything is worked out in your browser — nothing is saved or sent anywhere.</p>
+
+    <label class="k" for="amt">THE AMOUNT</label>
+    <div class="amount"><span>₦</span><input id="amt" inputmode="numeric" value="100,000" aria-label="Amount in naira"></div>
+    <div class="chips" id="chips"></div>
+
+    <div class="k" style="margin-bottom:10px">WHEN WOULD YOU NEED IT BACK?</div>
+    <div id="opts"></div>
+
+    <button class="go" id="go" disabled>Show me what to do</button>
+    <p class="fine">Education only, not advice. Nothing here leaves your browser.</p>
+  </div>
+</section>
+
+<section id="answer">
+  <div class="ahead"><div class="wrap">
+    <div class="eyebrow" id="a-sub"></div>
+    <h1 id="a-head" style="font-size:27px"></h1>
+    <p class="lede" id="a-reason"></p>
+  </div></div>
+
+  <div class="wrap">
+    <div class="card">
+      <div class="k2">YOU WOULD HAVE</div>
+      <div class="big num" id="a-total"></div>
+      <div style="font-size:13px; color:#6b7770; margin-top:2px" id="a-pick"></div>
+      <div style="margin-top:18px" id="a-bars"></div>
+      <div style="font-size:13px; color:#6b7770; line-height:1.55" id="a-caveat"></div>
+      <div class="note" id="a-gap"></div>
+    </div>
+
+    <div class="k2" style="margin-top:26px">WHEN DOES IT DOUBLE?</div>
+    <div class="card" style="margin-top:8px">
+      <div id="a-double"></div>
+      <p style="font-size:14px; color:var(--ink2); margin:14px 0 0" id="a-doubleNote"></p>
+    </div>
+
+    <div class="k2" style="margin-top:26px">WHAT TO DO</div>
+    <div class="steps" id="a-steps"></div>
+
+    <p style="font-size:12.5px; color:#8a9790; margin-top:18px">
+      Rates are the latest published figures from the DMO, CBN and NBS, each carrying the date it
+      refers to. Education only, not financial advice.
+    </p>
+
+    <footer>
+      <a href="/">Yield</a><a href="/demo/">Open the app</a><a href="/privacy.html">Privacy</a><a href="/disclaimer.html">Disclaimer</a><a href="/support.html">Support</a>
+    </footer>
+  </div>
+</section>
+
+<script type="module">
+import { HORIZONS, buildPlan, formatYears, naira } from '/plan-engine.js';
+
+const $ = (id) => document.getElementById(id);
+const fmt = (n) => n.toLocaleString('en-NG');
+let amount = 100000;
+let horizon = null;
+let figures = null;
+let events = [];
+
+// Quick amounts, because most people do not want to type ₦100,000.
+[20000, 100000, 500000, 1000000].forEach((q) => {
+  const b = document.createElement('button');
+  b.className = 'chip';
+  b.type = 'button';
+  b.textContent = q >= 1e6 ? '₦' + q / 1e6 + 'm' : '₦' + fmt(q);
+  b.setAttribute('aria-pressed', String(q === amount));
+  b.onclick = () => { amount = q; $('amt').value = fmt(q); paintChips(); };
+  $('chips').appendChild(b);
+});
+function paintChips() {
+  [...$('chips').children].forEach((b) => {
+    const v = Number(b.textContent.replace(/[₦,m]/g, '')) * (b.textContent.includes('m') ? 1e6 : 1);
+    b.setAttribute('aria-pressed', String(v === amount));
+  });
+}
+$('amt').addEventListener('input', (e) => {
+  const raw = e.target.value.replace(/[^0-9]/g, '');
+  amount = Number(raw) || 0;
+  e.target.value = raw ? fmt(amount) : '';
+  paintChips();
+  $('go').disabled = !horizon || amount <= 0;
+});
+
+HORIZONS.forEach((h) => {
+  const b = document.createElement('button');
+  b.className = 'opt';
+  b.type = 'button';
+  b.setAttribute('aria-pressed', 'false');
+  b.innerHTML = h.label + '<small>' + h.detail + '</small>';
+  b.onclick = () => {
+    horizon = h.key;
+    [...$('opts').children].forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    $('go').disabled = amount <= 0;
+  };
+  $('opts').appendChild(b);
+});
+
+Promise.all([
+  fetch('/rates.json').then((r) => r.json()),
+  fetch('/calendar.json').then((r) => r.json()),
+])
+  .then(([r, c]) => { figures = r.figures; events = c.events; })
+  .catch(() => { $('go').disabled = true; });
+
+$('go').onclick = () => {
+  if (!figures) return;
+  const p = buildPlan({ amount, horizon, figures, events });
+
+  $('a-sub').textContent = naira(p.amount) + ' · NEEDED IN ' + (p.years === 1 ? 'A YEAR' : p.years + ' YEARS');
+  $('a-head').textContent = p.headline;
+  $('a-reason').textContent = p.reason;
+  $('a-total').textContent = naira(p.pick.total);
+  $('a-pick').textContent = p.pick.label + ' at ' + p.pick.ratePct.toFixed(2) + '%' +
+    (p.pick.rateNote ? ' (' + p.pick.rateNote + ')' : '');
+
+  const best = p.options[0].total;
+  $('a-bars').innerHTML = p.options.map((o) => {
+    const on = o.key === p.pick.key;
+    return '<div class="row" style="' + (on ? 'font-weight:600;color:#14271c' : '') + '">' +
+      '<span>' + o.label + ' · ' + o.ratePct.toFixed(2) + '%</span>' +
+      '<span class="num">' + naira(o.total) + '</span></div>' +
+      '<div class="track"><div class="fill" style="width:' + Math.max(8, (o.total / best) * 100) +
+      '%;background:' + (on ? '#0d4f2e' : '#c9cfcb') + '"></div></div>';
+  }).join('');
+
+  $('a-caveat').textContent = p.pickCaveat || '';
+  $('a-gap').innerHTML = p.gap > 0
+    ? '<strong class="num">' + naira(p.gap) + ' more</strong> than a savings account, for the same money over the same time, without taking on market risk.'
+    : '';
+
+  const longest = p.doubling[0].years;
+  $('a-double').innerHTML = p.doubling.map((d) =>
+    '<div class="row"><span>' + d.label + ' · ' + d.ratePct.toFixed(2) + '%</span>' +
+    '<span class="num" style="font-weight:600">' + formatYears(d.years) + '</span></div>' +
+    '<div class="track"><div class="fill" style="width:' + (d.years / longest) * 100 + '%;background:#c9cfcb"></div></div>'
+  ).join('') + (p.pricesDouble ?
+    '<div class="row" style="color:#b45309;font-weight:700"><span>Prices double · ' + p.inflation + '% inflation</span>' +
+    '<span class="num">' + formatYears(p.pricesDouble) + '</span></div>' +
+    '<div class="track" style="background:#fdf0dc"><div class="fill" style="width:' +
+    (p.pricesDouble / longest) * 100 + '%;background:#f0b267"></div></div>' : '');
+
+  $('a-doubleNote').innerHTML = p.pricesDouble
+    ? 'Prices double faster than any of these. So your money doubling is not the same as your money being worth twice as much — what is actually on offer is <strong style="color:#14271c">standing still instead of falling behind</strong>, and a savings account falls behind by years.'
+    : '';
+
+  const steps = [];
+  if (p.next) {
+    steps.push('<a href="/w/' + p.next.id + '.html"><span class="num" style="font-size:26px;font-weight:700;color:#14271c;min-width:38px">' +
+      p.daysAway + '</span><span><b>' + (p.daysAway === 0 ? 'It is open today' : 'Days until the next window') +
+      '</b>' + p.next.title + '</span></a>');
+  }
+  steps.push('<a href="/learn/' + p.lessonId + '.html"><span><b>Understand what you are buying</b>' + p.lessonTitle + '</span></a>');
+  steps.push('<a href="/demo/"><span><b>Get reminded before it closes</b>Open Yield and set an alert</span></a>');
+  $('a-steps').innerHTML = steps.join('');
+
+  $('ask').style.display = 'none';
+  $('answer').classList.add('on');
+  window.scrollTo(0, 0);
+};
+</script>
+
+</body>
+</html>
