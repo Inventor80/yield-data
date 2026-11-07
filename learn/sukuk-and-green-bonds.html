@@ -23,6 +23,14 @@
   .eyebrow { font-size:11px; letter-spacing:1.3px; font-weight:700; color:#9fcfb4; margin-top:26px; }
   h1 { margin:8px 0 0; font-size:34px; line-height:1.15; color:#fff; font-weight:700; letter-spacing:-.7px; }
   .when { margin-top:12px; font-size:15px; color:#bcdcc9; }
+  /* Filled in by the browser, not by the build — see windowPage(). */
+  .live { display:inline-block; margin-top:14px; padding:7px 14px; border-radius:999px;
+          font-size:13.5px; font-weight:600; background:rgba(255,255,255,.14); color:#dff0e6; }
+  .live.open { background:#fff; color:var(--deep); }
+  .live.soon { background:#ffe9a8; color:#7a4e00; }
+  .live.shut { background:rgba(0,0,0,.26); color:#cfe0d5; }
+  .shutnote { background:#fff; border:1px solid var(--line); border-left:3px solid #b45309;
+              border-radius:10px; padding:14px 16px; margin:0 0 22px; font-size:15px; }
   main { padding: 32px 0 64px; }
   .card { background:#fff; border:1px solid var(--line); border-radius:16px; padding:22px; margin-bottom:22px; }
   .facts { display:flex; flex-wrap:wrap; gap:26px; }

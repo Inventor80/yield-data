@@ -23,6 +23,14 @@
   .eyebrow { font-size:11px; letter-spacing:1.3px; font-weight:700; color:#9fcfb4; margin-top:26px; }
   h1 { margin:8px 0 0; font-size:34px; line-height:1.15; color:#fff; font-weight:700; letter-spacing:-.7px; }
   .when { margin-top:12px; font-size:15px; color:#bcdcc9; }
+  /* Filled in by the browser, not by the build — see windowPage(). */
+  .live { display:inline-block; margin-top:14px; padding:7px 14px; border-radius:999px;
+          font-size:13.5px; font-weight:600; background:rgba(255,255,255,.14); color:#dff0e6; }
+  .live.open { background:#fff; color:var(--deep); }
+  .live.soon { background:#ffe9a8; color:#7a4e00; }
+  .live.shut { background:rgba(0,0,0,.26); color:#cfe0d5; }
+  .shutnote { background:#fff; border:1px solid var(--line); border-left:3px solid #b45309;
+              border-radius:10px; padding:14px 16px; margin:0 0 22px; font-size:15px; }
   main { padding: 32px 0 64px; }
   .card { background:#fff; border:1px solid var(--line); border-radius:16px; padding:22px; margin-bottom:22px; }
   .facts { display:flex; flex-wrap:wrap; gap:26px; }
@@ -54,10 +62,15 @@
     <div class="eyebrow">EXPECTED</div>
     <h1>FGN Bond auction — December</h1>
     <div class="when">14 December 2026</div>
+    <div class="live" id="live"
+         data-start="2026-12-14"
+         data-end="2026-12-14"
+         data-act="" hidden></div>
   </div>
 </header>
 <main>
   <div class="wrap">
+    <div id="shutnote"></div>
     <p style="font-size:17px">The government’s main monthly borrowing, in bonds lasting ten years or more. The minimum at the auction itself is ₦50 million, so this is not where most people buy — but the rate set here is the anchor every other rate follows, and you can buy the same bonds in small amounts afterwards through a broker.</p>
 
     <div class="card"><div class="facts"><div><div class="k">RATE</div><div class="v">Set at auction — September’s new 10-year cleared at 16.79%</div></div><div><div class="k">MINIMUM</div><div class="v">₦50,000,000 at the auction · from about ₦10,000 through a broker afterwards</div></div><div><div class="k">TENOR</div><div class="v">10 years and longer</div></div></div></div>
@@ -74,6 +87,91 @@
     <a class="cta" href="/demo/">Open the calendar</a>
   </div>
 </main>
+<!--
+  Why there is a script on an otherwise static page.
+
+  These pages exist to be found in a search engine, which means they are
+  read long after they are built — somebody searching "FGN savings bond
+  November" in February lands on a page generated in November. The dates
+  in the header are absolute and stay true, but on their own they let
+  that reader believe a window is still open when it shut months ago.
+  That is the single worst thing this site could do to someone.
+
+  So anything time-relative is worked out in the reader's browser,
+  against the reader's clock, at the moment they look. A build can go
+  stale; a subtraction performed on the spot cannot. If the script does
+  not run, the page simply shows the absolute dates it always did — the
+  pill is hidden until it has something true to say.
+-->
+<script>
+(function () {
+  var el = document.getElementById('live');
+  if (!el) return;
+
+  function asDate(s) {
+    var p = String(s).split('-');
+    return new Date(+p[0], +p[1] - 1, +p[2]);
+  }
+  function longDate(d) {
+    try {
+      return d.toLocaleDateString('en-NG', { day: 'numeric', month: 'long', year: 'numeric' });
+    } catch (e) {
+      return d.toDateString();
+    }
+  }
+
+  var n = new Date();
+  var today = new Date(n.getFullYear(), n.getMonth(), n.getDate());
+  var start = asDate(el.getAttribute('data-start'));
+  var end = asDate(el.getAttribute('data-end'));
+  var act = el.getAttribute('data-act') === '1';
+  var toStart = Math.round((start - today) / 86400000);
+  var toEnd = Math.round((end - today) / 86400000);
+
+  var cls = '';
+  var text = '';
+
+  if (toEnd < 0) {
+    cls = 'shut';
+    text = act ? 'This window has closed' : 'This has already happened';
+    var note = document.getElementById('shutnote');
+    if (note) {
+      note.className = 'shutnote';
+      note.innerHTML =
+        '<strong>' +
+        (act ? 'This window closed on ' : 'This took place on ') +
+        longDate(end) +
+        '.</strong> ' +
+        (act
+          ? 'You can no longer take part in this one. These offers run on a repeating cycle, so there will be another — the '
+          : 'The ') +
+        '<a href="/demo/">calendar</a> shows what is open now and what is coming.';
+    }
+  } else if (toStart > 0) {
+    cls = 'later';
+    text =
+      toStart === 1
+        ? (act ? 'Opens tomorrow' : 'Happens tomorrow')
+        : (act ? 'Opens in ' + toStart + ' days' : 'In ' + toStart + ' days');
+  } else if (!act) {
+    cls = 'open';
+    text = toEnd === 0 ? 'Happening today' : 'Under way';
+  } else if (toEnd === 0) {
+    cls = 'soon';
+    text = 'Last day — closes today';
+  } else if (toEnd === 1) {
+    cls = 'soon';
+    text = 'Closes tomorrow';
+  } else {
+    cls = toEnd <= 2 ? 'soon' : 'open';
+    text = 'Open now — closes in ' + toEnd + ' days';
+  }
+
+  el.className = 'live ' + cls;
+  el.textContent = text;
+  el.removeAttribute('hidden');
+})();
+</script>
 <footer>
   <div class="wrap">
     <p><a href="/">Yield</a><a href="/demo/">Open the app</a><a href="/privacy.html">Privacy</a><a href="/disclaimer.html">Disclaimer</a><a href="/support.html">Support</a></p>

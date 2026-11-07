@@ -101,6 +101,8 @@
   .fineprint { margin-top: 28px; font-size: 13.5px; color: #9ac4ab; }
 
   /* ---- The live card -------------------------------------------- */
+  .hero-side { flex: 1 1 330px; min-width: 0; max-width: 390px; }
+  .hero-side .card { flex: none; max-width: none; width: 100%; }
   .card {
     flex: 1 1 330px; min-width: 0; max-width: 390px;
     background: var(--surface); border-radius: 20px; padding: 22px;
@@ -121,6 +123,12 @@
   .fact-k { font-size: 10px; color: #8a8a8a; letter-spacing: .4px; }
   .fact-v { font-size: 15px; font-weight: 600; color: #1a1a1a; }
   .card-src { font-size: 11px; color: #8a8a8a; margin-top: 14px; }
+  /* Shown only when the edition has aged. See the fetch handler below. */
+  .staleness { margin-top: 14px; padding: 12px 15px; border-radius: 12px;
+               font-size: 13px; line-height: 1.5; background: rgba(255,255,255,.1);
+               color: #dff0e6; border: 1px solid rgba(255,255,255,.2); }
+  .staleness.stale { background: #fff3cd; color: #7a4e00; border-color: #e8c86a; }
+  .staleness b { display: block; margin-bottom: 3px; }
 
   /* ---- Sections -------------------------------------------------- */
   section { padding: 76px 0; }
@@ -184,12 +192,15 @@
         <div class="fineprint">Free. No account. Nothing about you leaves your phone.</div>
       </div>
 
-      <div class="card float" id="live-card">
-        <div class="card-head">
-          <span class="tag tag-bond">LOADING</span>
+      <div class="hero-side">
+        <div class="card float" id="live-card">
+          <div class="card-head">
+            <span class="tag tag-bond">LOADING</span>
+          </div>
+          <div class="card-title">Fetching the next window…</div>
+          <div class="card-body">This card reads the same calendar the app does, so the countdown is worked out fresh every time you load the page.</div>
         </div>
-        <div class="card-title">Fetching the next window…</div>
-        <div class="card-body">This card reads the same calendar the app does, so it is never out of date.</div>
+        <div id="staleness"></div>
       </div>
     </div>
   </div>
@@ -275,7 +286,7 @@
       Yield is for education and information only. It is not financial advice, and it is not
       affiliated with, endorsed by or operated on behalf of the Debt Management Office, the Central
       Bank of Nigeria, the National Bureau of Statistics or any other government body. Calendar
-      edition 2026-10-09.
+      edition 2026-11-07.
     </p>
   </div>
 </footer>
@@ -325,6 +336,26 @@
           : open.length > 1 ? open.length + ' windows open right now'
           : live.length ? 'Next window in ' + days(today, parseDate(live[0].startDate)) + ' days'
           : 'Calendar updated ' + data.updatedOn;
+      }
+
+      /* How old this edition is.
+         The countdowns above are computed against the reader's own clock,
+         so they are always right about the dates we hold. This is the
+         other question — whether the dates we hold are still the latest
+         ones published — and only the edition date can answer it. The
+         thresholds match checkFreshness() in src/data/calendar.ts: past
+         24 days a new circular should have appeared, past 40 a full
+         monthly cycle has been missed. */
+      var age = days(parseDate(data.updatedOn), today);
+      var box = document.getElementById('staleness');
+      if (box && age >= 24) {
+        var stale = age >= 40;
+        box.className = 'staleness' + (stale ? ' stale' : '');
+        box.innerHTML =
+          '<b>' + (stale ? 'Not checked in ' + age + ' days' : 'Last checked ' + age + ' days ago') + '</b>' +
+          (stale
+            ? 'Windows will have opened and closed since. Check the official source before you act on anything here.'
+            : 'A new round of offers is probably out by now. Confirm with the official source before you act.');
       }
 
       var e = open[0] || live[0];
