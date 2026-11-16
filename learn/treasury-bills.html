@@ -43,6 +43,17 @@
   li { margin: 6px 0; }
   .note { background:#fff; border:1px solid var(--line); border-left:3px solid var(--deep);
           border-radius:10px; padding:14px 16px; margin:20px 0; font-size:15px; }
+  /* The second explanation. On the phone this is behind an "I don't get
+     it" button, because screen space is scarce and a reader who did
+     understand should not have to scroll past it. Here it is simply
+     shown: space is cheap on the web, the page is often someone's first
+     contact with the idea arriving cold from a search result, and text
+     that is present can be read by people and found by search engines
+     in a way that text behind a toggle cannot. */
+  .simpler { background:var(--deep); border-radius:12px; padding:16px 18px 18px; margin:20px 0; }
+  .simpler-k { font-size:10.5px; letter-spacing:1.2px; color:#9fcfb4; font-weight:700; }
+  .simpler h4 { margin:7px 0 0; font-size:17px; color:#fff; font-weight:700; }
+  .simpler p { margin:10px 0 0; font-size:15px; line-height:1.65; color:#dff0e6; }
   .src { font-size:13px; color:#8a9790; margin-top:18px; }
   .cta { display:inline-block; background:var(--deep); color:#fff; text-decoration:none;
          font-weight:600; padding:13px 22px; border-radius:11px; margin-top:8px; }
@@ -80,6 +91,11 @@ In 364 days you receive → ₦100,000
 Your gain → ₦13,700
 
 Nothing arrives in between. The whole return is the gap.</p></div>
+    <div class="simpler">
+      <div class="simpler-k">THE SAME THING, SMALLER</div>
+      <h4>Pay ₦90,000, collect ₦100,000</h4>
+      <p>Almost everything else pays you interest on top of your money. A Treasury Bill does it the other way round.</p><p>You hand over ₦90,000. A year later the government hands you back ₦100,000.</p><p>There is no interest payment. Not monthly, not ever. Your return is the ₦10,000 gap — and you earned it the moment you bought, by paying less than the thing was going to be worth.</p><p>That is all “bought at a discount” means. The discount is the whole return.</p>
+    </div>
 
     
     <h3>Why the price is the rate</h3>
@@ -91,6 +107,7 @@ Nothing arrives in between. The whole return is the gap.</p></div>
 Pay ₦84,000, receive ₦100,000 → you made ₦16,000 on ₦84,000 = 19.0%
 
 The government did not change what it pays. It changed what it charges.</p></div>
+    
 
     
     <h3>The minimum, and the part nobody tells you</h3>
@@ -98,6 +115,7 @@ The government did not change what it pays. It changed what it charges.</p></div
 <p>What happens instead is that banks and stockbrokers buy in bulk at the auction and sell smaller parcels on to their customers, usually <strong>from about ₦100,000</strong>. This is completely normal and is how most Nigerians hold bills.</p>
 <p>But it means the rate you are offered is <strong>not</strong> the rate you read about in the news. The bank keeps a slice. If the auction cleared at 15.89% and your bank offers you 13%, the difference is their margin — which may be fair for the service, or may not.</p>
 <p>So ask two questions, in this order: *what rate am I getting?* and *what did the last auction clear at?* Yield puts the second number on the Calendar tab. Simply knowing it changes the conversation.</p>
+    
     
 
     
@@ -112,6 +130,7 @@ Less 10% withholding tax → −₦1,370
 What reaches you → ₦12,330
 
 Still comfortably ahead of a savings account at 7.46%, which on ₦86,300 would have paid about ₦6,400 before any tax.</p></div>
+    
 
     <h3>Check yourself</h3>
     <p>A friend says: &quot;I bought a Treasury Bill for ₦900,000 and they gave me ₦1,000,000 after a year, but they never paid me any interest — I think I was cheated.&quot; What went wrong?</p>
